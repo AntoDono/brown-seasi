@@ -1,62 +1,14 @@
 <script setup lang="ts">
-import { gsap } from 'gsap'
-
 const REPORT_URL = 'https://drive.google.com/file/d/1IvbaHN4bnrnH0o2v3s-_nY3TGx5YyhqW/view'
 
 const root = ref<HTMLElement | null>(null)
 useScrollReveal(root)
-
-const stageRef = ref<HTMLElement | null>(null)
-const cardRef = ref<HTMLElement | null>(null)
-const overlayRef = ref<HTMLElement | null>(null)
-
-const { elementX, elementY, isOutside } = useMouseInElement(cardRef)
-const isHovered = useElementHover(cardRef)
-
-let rotateXTo: ((v: number) => void) | null = null
-let rotateYTo: ((v: number) => void) | null = null
-
-watch([elementX, elementY, isOutside], () => {
-  const el = cardRef.value
-  if (!el || !rotateXTo || !rotateYTo) return
-  if (isOutside.value) {
-    rotateXTo(0)
-    rotateYTo(0)
-    return
-  }
-  const rx = (elementY.value - el.clientHeight / 2) / 22
-  const ry = (elementX.value - el.clientWidth / 2) / -22
-  rotateXTo(rx)
-  rotateYTo(ry)
-})
-
-watch(isHovered, (on) => {
-  const o = overlayRef.value
-  if (!o) return
-  gsap.to(o, {
-    opacity: on ? 1 : 0,
-    duration: 0.4,
-    ease: 'power2.out',
-  })
-  const shine = cardRef.value?.querySelector('.report-shine')
-  if (shine)
-    gsap.to(shine, { x: on ? '120%' : '-40%', duration: 0.65, ease: 'power2.out' })
-})
-
-onMounted(() => {
-  const el = cardRef.value
-  if (el) {
-    gsap.set(el, { transformPerspective: 1100 })
-    rotateXTo = gsap.quickTo(el, 'rotationX', { duration: 0.5, ease: 'power3.out' })
-    rotateYTo = gsap.quickTo(el, 'rotationY', { duration: 0.5, ease: 'power3.out' })
-  }
-})
 </script>
 
 <template>
   <section id="annual-report" ref="root" class="relative bg-ivory-dark py-24 md:py-36 overflow-hidden">
     <!-- Background wash -->
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(185,28,28,0.12),transparent_55%)]" />
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(154,71,71,0.12),transparent_55%)]" />
     <div class="pointer-events-none absolute inset-0 bg-grain opacity-[0.35]" />
 
     <div class="max-w-8xl mx-auto px-6 md:px-10 relative z-10">
@@ -109,11 +61,8 @@ onMounted(() => {
         </div>
 
         <!-- Preview stack -->
-        <div
-          ref="stageRef"
-          class="lg:col-span-7 flex justify-center lg:justify-end perspective-[1200px]"
-        >
-          <div class="relative w-full max-w-lg [transform-style:preserve-3d]">
+        <div class="lg:col-span-7 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-lg">
             <!-- Back sheets -->
             <div
               class="absolute -bottom-5 -right-5 left-5 top-5 rounded-md bg-gradient-to-br from-crimson/25 to-crimson-deep/20 ring-1 ring-crimson/20 -z-20 shadow-xl"
@@ -125,34 +74,28 @@ onMounted(() => {
             />
 
             <a
-              ref="cardRef"
               :href="REPORT_URL"
               target="_blank"
               rel="noopener"
-              class="report-card group relative block overflow-hidden rounded-md bg-ink shadow-2xl ring-1 ring-crimson/30 [transform-style:preserve-3d] outline-none focus-visible:ring-2 focus-visible:ring-crimson-vivid focus-visible:ring-offset-2 focus-visible:ring-offset-ivory-dark"
+              class="group relative block overflow-hidden rounded-md bg-ink shadow-2xl ring-1 ring-crimson/30 outline-none transition-transform duration-300 ease-out will-change-transform hover:scale-[1.03] focus-visible:scale-[1.02] focus-visible:ring-2 focus-visible:ring-crimson-vivid focus-visible:ring-offset-2 focus-visible:ring-offset-ivory-dark origin-center"
             >
-              <!-- Cover image -->
-              <div class="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
-                <img
-                  src="/images/conference2.png"
-                  alt=""
-                  class="absolute inset-0 h-full w-full object-cover opacity-45 saturate-[0.85]"
-                  aria-hidden="true"
-                >
-                <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-crimson-deep/50" />
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(220,38,38,0.35),transparent_55%)]" />
-
-                <!-- Shine sweep -->
-                <div
-                  class="report-shine pointer-events-none absolute -inset-full top-0 w-1/2 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-60 -translate-x-full"
-                  aria-hidden="true"
-                />
+              <div class="relative isolate aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                  <img
+                    src="/images/conference2.png"
+                    alt=""
+                    class="h-full w-full object-cover opacity-45 saturate-[0.85]"
+                    aria-hidden="true"
+                  >
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-crimson-deep/50" />
+                  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(179,90,90,0.28),transparent_55%)]" />
+                </div>
 
                 <!-- Spine accent -->
-                <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-crimson via-crimson-vivid to-crimson-deep shadow-[4px_0_24px_rgba(185,28,28,0.45)]" />
+                <div class="absolute left-0 top-0 bottom-0 z-[2] w-2 bg-gradient-to-b from-crimson via-crimson-vivid to-crimson-deep shadow-[4px_0_24px_rgba(154,71,71,0.35)]" />
 
                 <!-- Cover typography -->
-                <div class="absolute inset-0 p-8 sm:p-10 flex flex-col justify-between text-ivory">
+                <div class="absolute inset-0 z-10 flex flex-col justify-between p-8 sm:p-10 text-ivory">
                   <div>
                     <img
                       src="/images/logo.png"
@@ -176,16 +119,15 @@ onMounted(() => {
                       :key="item"
                       class="flex items-center gap-3 font-sans text-xs text-ivory/55"
                     >
-                      <span class="h-1 w-1 rounded-full bg-crimson-vivid shadow-[0_0_8px_rgba(220,38,38,0.8)]" />
+                      <span class="h-1 w-1 rounded-full bg-crimson-vivid shadow-[0_0_8px_rgba(179,90,90,0.5)]" />
                       {{ item }}
                     </li>
                   </ul>
                 </div>
 
-                <!-- Hover overlay -->
+                <!-- Hover: solid panel + Google Drive copy (CSS only) -->
                 <div
-                  ref="overlayRef"
-                  class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-ink/95 via-crimson-deep/85 to-crimson/35 opacity-0 px-8 text-center"
+                  class="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center gap-4 bg-ink/90 px-8 text-center opacity-0 backdrop-blur-[1px] transition-opacity duration-300 ease-out group-hover:opacity-100"
                 >
                   <span class="font-mono text-2xs uppercase tracking-[0.35em] text-crimson-vivid">Preview</span>
                   <p class="font-cormorant text-2xl sm:text-3xl text-ivory leading-snug max-w-sm">

@@ -1,6 +1,22 @@
 <script setup lang="ts">
-useHead({
-  title: 'Brown SEASI — Southeast Asian Studies Initiative',
+const title = 'Brown SEASI — Southeast Asian Studies Initiative'
+const description =
+  'The Southeast Asian Studies Initiative (SEASI) at Brown University advocates for the development of Southeast Asian Studies through faculty support, courses, and programming.'
+
+const ogImage = useSiteAssetUrl('/images/landing-background.png')
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage,
+  ogImageAlt: 'Southeast Asian landscape — Brown SEASI',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
 })
 </script>
 

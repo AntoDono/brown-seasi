@@ -11,11 +11,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Muted crimson (~70% visual intensity vs. pure scarlet — editorial, not traffic red)
         crimson: {
-          DEFAULT: '#B91C1C',
-          vivid:   '#DC2626',
-          dark:    '#991B1B',
-          deep:    '#7F1D1D',
+          DEFAULT: '#9A4747',
+          vivid:   '#B35A5A',
+          dark:    '#7D3838',
+          deep:    '#5C2D2D',
         },
         ivory: {
           DEFAULT: '#F9F6F0',

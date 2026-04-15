@@ -1,12 +1,22 @@
 <script setup lang="ts">
-useHead({
-  title: 'Symposium 2026 — Brown SEASI',
-  meta: [
-    {
-      name: 'description',
-      content: 'SEASI\'s 6th Annual Symposium on Southeast Asian Studies, April 4, 2026 at the Watson Institute, Brown University.',
-    },
-  ],
+const title = 'Symposium 2026 — Brown SEASI'
+const description =
+  "SEASI's 6th Annual Symposium on Southeast Asian Studies, April 4, 2026 at the Watson Institute, Brown University."
+
+const ogImage = useSiteAssetUrl('/images/conference.png')
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage,
+  ogImageAlt: 'SEASI symposium at Brown University',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
 })
 
 const schedule = [
@@ -151,49 +161,44 @@ useScrollReveal(locationRef)
           >
         </div>
 
-        <div class="relative">
-          <div class="absolute top-0 bottom-0 w-px bg-border hidden sm:block" style="left: 9rem" />
+        <div class="flex flex-col">
+          <article
+            v-for="item in schedule"
+            :key="item.time"
+            data-reveal
+            class="grid grid-cols-1 sm:grid-cols-[10rem_minmax(0,1fr)] gap-x-8 gap-y-3 py-8 border-b border-border last:border-0"
+          >
+            <div class="font-mono text-sm text-muted sm:text-right sm:pt-1">
+              <time>{{ item.time }}</time>
+            </div>
 
-          <div class="flex flex-col">
-            <div
-              v-for="item in schedule"
-              :key="item.time"
-              data-reveal
-              class="relative flex flex-col sm:flex-row gap-4 sm:gap-8 py-8 border-b border-border last:border-0"
-            >
-              <div class="sm:w-36 md:w-44 shrink-0 sm:text-right">
-                <time class="font-mono text-sm text-muted">{{ item.time }}</time>
-              </div>
-
+            <div class="relative sm:border-l sm:border-border sm:pl-8">
               <div
-                class="hidden sm:block absolute top-10 w-3 h-3 rounded-full border-2 transition-colors"
-                style="left: calc(9rem - 6px)"
+                class="pointer-events-none absolute top-2.5 -left-[7px] hidden h-3 w-3 rounded-full border-2 sm:block"
                 :class="item.featured
-                  ? 'bg-crimson border-crimson shadow-lg shadow-crimson/35'
-                  : 'bg-ivory-dark border-border'"
+                  ? 'border-crimson bg-crimson shadow-lg shadow-crimson/35'
+                  : 'border-border bg-ivory ring-2 ring-ivory'"
               />
 
-              <div class="flex-1 sm:pl-8 md:pl-10">
-                <div class="flex items-center gap-3 mb-2">
-                  <span
-                    class="font-mono text-2xs uppercase tracking-widest px-2.5 py-1 rounded-full"
-                    :class="typeColors[item.type] ?? 'bg-ivory-dark text-muted'"
-                  >
-                    {{ item.type }}
-                  </span>
-                </div>
-                <h3
-                  class="font-cormorant font-semibold text-xl md:text-2xl leading-tight mb-2"
-                  :class="item.featured ? 'text-crimson' : 'text-ink'"
+              <div class="flex items-center gap-3 mb-2">
+                <span
+                  class="font-mono text-2xs uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  :class="typeColors[item.type] ?? 'bg-ivory-dark text-muted'"
                 >
-                  {{ item.title }}
-                </h3>
-                <p class="font-sans text-sm text-muted leading-relaxed max-w-xl">
-                  {{ item.desc }}
-                </p>
+                  {{ item.type }}
+                </span>
               </div>
+              <h3
+                class="font-cormorant font-semibold text-xl md:text-2xl leading-tight mb-2"
+                :class="item.featured ? 'text-crimson' : 'text-ink'"
+              >
+                {{ item.title }}
+              </h3>
+              <p class="font-sans text-sm text-muted leading-relaxed max-w-xl">
+                {{ item.desc }}
+              </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

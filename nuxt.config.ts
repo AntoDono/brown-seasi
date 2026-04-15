@@ -6,23 +6,19 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      /** Production site origin, no trailing slash (e.g. https://seasi.brown.edu). Required for correct Open Graph image URLs. */
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
+    },
+  },
+
   app: {
     head: {
       title: 'Brown SEASI — Southeast Asian Studies Initiative',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          name: 'description',
-          content:
-            'The Southeast Asian Studies Initiative (SEASI) at Brown University advocates for the development of Southeast Asian Studies through faculty support, courses, and programming.',
-        },
-        { property: 'og:title', content: 'Brown SEASI' },
-        {
-          property: 'og:description',
-          content: 'An initiative for the establishment of Southeast Asian studies at Brown University.',
-        },
-        { property: 'og:type', content: 'website' },
       ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

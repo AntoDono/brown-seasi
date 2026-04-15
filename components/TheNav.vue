@@ -24,7 +24,7 @@ const links = [
   <header
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     :class="scrolled
-      ? 'bg-ivory/95 backdrop-blur-md border-b border-crimson/10 shadow-[0_8px_30px_-12px_rgba(185,28,28,0.12)]'
+      ? 'bg-ivory/95 backdrop-blur-md border-b border-crimson/10 shadow-[0_8px_30px_-12px_rgba(154,71,71,0.1)]'
       : 'bg-transparent'"
   >
     <nav class="max-w-8xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
@@ -44,8 +44,7 @@ const links = [
         <li v-for="link in links" :key="link.href">
           <NuxtLink
             :to="link.href"
-            class="font-sans text-sm font-medium tracking-wide transition-colors duration-200 relative group"
-            :class="scrolled ? 'text-ink/70 hover:text-crimson' : 'text-ivory/85 hover:text-crimson-vivid'"
+            class="font-sans text-sm font-medium tracking-wide text-black hover:text-crimson transition-colors duration-200 relative group"
           >
             {{ link.label }}
             <span
@@ -56,10 +55,7 @@ const links = [
         <li>
           <a
             href="mailto:seasi@brown.edu"
-            class="font-sans text-sm font-medium px-4 py-2 rounded-full border transition-all duration-300"
-            :class="scrolled
-              ? 'border-crimson text-crimson hover:bg-crimson hover:text-ivory'
-              : 'border-crimson-vivid/50 text-ivory hover:bg-crimson/20'"
+            class="font-sans text-sm font-medium px-4 py-2 rounded-full border border-crimson text-crimson hover:bg-crimson hover:text-ivory transition-all duration-300"
           >
             Contact
           </a>
@@ -102,7 +98,7 @@ const links = [
           <li v-for="link in links" :key="link.href">
             <NuxtLink
               :to="link.href"
-              class="block font-sans text-base font-medium text-ink py-3 border-b border-border last:border-0 transition-colors hover:text-crimson"
+              class="block font-sans text-base font-medium text-black py-3 border-b border-border last:border-0 transition-colors hover:text-crimson"
               @click="closeMenu"
             >
               {{ link.label }}
