@@ -24,7 +24,7 @@ const links = [
   <header
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     :class="scrolled
-      ? 'bg-ivory/95 backdrop-blur-md border-b border-crimson/10 shadow-[0_8px_30px_-12px_rgba(154,71,71,0.1)]'
+      ? 'bg-ivory/95 backdrop-blur-md border-b border-crimson/10 shadow-[0_8px_30px_-12px_rgba(196,30,58,0.12)]'
       : 'bg-transparent'"
   >
     <nav class="max-w-8xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
@@ -44,18 +44,24 @@ const links = [
         <li v-for="link in links" :key="link.href">
           <NuxtLink
             :to="link.href"
-            class="font-sans text-sm font-medium tracking-wide text-black hover:text-crimson transition-colors duration-200 relative group"
+            class="font-sans text-sm font-medium tracking-wide transition-colors duration-200 relative group"
+            :class="scrolled
+              ? 'text-stone-700 hover:text-crimson-vivid'
+              : 'text-ivory hover:text-crimson-vivid'"
           >
             {{ link.label }}
             <span
-              class="absolute -bottom-0.5 left-0 w-0 h-px bg-crimson group-hover:w-full transition-all duration-300"
+              class="absolute -bottom-0.5 left-0 w-0 h-px bg-crimson-vivid group-hover:w-full transition-all duration-300"
             />
           </NuxtLink>
         </li>
         <li>
           <a
             href="mailto:seasi@brown.edu"
-            class="font-sans text-sm font-medium px-4 py-2 rounded-full border border-crimson text-crimson hover:bg-crimson hover:text-ivory transition-all duration-300"
+            class="font-sans text-sm font-medium px-4 py-2 rounded-full border transition-all duration-300"
+            :class="scrolled
+              ? 'border-crimson-vivid text-crimson-vivid hover:bg-crimson-vivid hover:text-ivory'
+              : 'border-crimson-vivid/55 text-ivory hover:bg-crimson-vivid/25'"
           >
             Contact
           </a>
@@ -68,16 +74,25 @@ const links = [
         @click="toggleMenu"
       >
         <span
-          class="block w-6 h-0.5 bg-black transition-all duration-300 origin-center"
-          :class="menuOpen ? 'rotate-45 translate-y-[0.38rem]' : ''"
+          class="block w-6 h-0.5 transition-all duration-300 origin-center"
+          :class="[
+            scrolled ? 'bg-stone-900' : 'bg-ivory',
+            menuOpen ? 'rotate-45 translate-y-[0.38rem]' : '',
+          ]"
         />
         <span
-          class="block w-6 h-0.5 bg-black transition-all duration-300"
-          :class="menuOpen ? 'opacity-0' : 'opacity-100'"
+          class="block w-6 h-0.5 transition-all duration-300"
+          :class="[
+            scrolled ? 'bg-stone-900' : 'bg-ivory',
+            menuOpen ? 'opacity-0' : 'opacity-100',
+          ]"
         />
         <span
-          class="block w-6 h-0.5 bg-black transition-all duration-300 origin-center"
-          :class="menuOpen ? '-rotate-45 -translate-y-[0.38rem]' : ''"
+          class="block w-6 h-0.5 transition-all duration-300 origin-center"
+          :class="[
+            scrolled ? 'bg-stone-900' : 'bg-ivory',
+            menuOpen ? '-rotate-45 -translate-y-[0.38rem]' : '',
+          ]"
         />
       </button>
     </nav>
@@ -98,7 +113,7 @@ const links = [
           <li v-for="link in links" :key="link.href">
             <NuxtLink
               :to="link.href"
-              class="block font-sans text-base font-medium text-black py-3 border-b border-border last:border-0 transition-colors hover:text-crimson"
+              class="block font-sans text-base font-medium text-stone-700 py-3 border-b border-border last:border-0 transition-colors hover:text-crimson-vivid"
               @click="closeMenu"
             >
               {{ link.label }}
@@ -107,7 +122,7 @@ const links = [
           <li class="pt-2">
             <a
               href="mailto:seasi@brown.edu"
-              class="inline-block font-sans text-sm font-medium px-4 py-2 rounded-full border border-crimson/30 text-crimson hover:bg-crimson hover:text-ivory transition-all duration-300"
+              class="inline-block font-sans text-sm font-medium px-4 py-2 rounded-full border border-crimson-vivid/50 text-crimson-vivid hover:bg-crimson-vivid hover:text-ivory transition-all duration-300"
             >
               Contact
             </a>

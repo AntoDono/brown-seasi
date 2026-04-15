@@ -90,7 +90,7 @@ onMounted(() => {
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         <div data-reveal class="relative group">
-          <div class="aspect-[4/3] overflow-hidden rounded-sm ring-1 ring-crimson/10 shadow-[0_24px_80px_-24px_rgba(154,71,71,0.2)]">
+          <div class="aspect-[4/3] overflow-hidden rounded-sm ring-1 ring-crimson/10 shadow-[0_24px_80px_-24px_rgba(196,30,58,0.22)]">
             <img
               src="/images/conference2.png"
               alt="SEASI members and events"

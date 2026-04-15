@@ -69,8 +69,8 @@ onMounted(() => {
 
     <div class="relative z-10 w-full max-w-8xl mx-auto px-6 md:px-10 pt-24 pb-12 md:pt-0 md:pb-28">
       <div class="hero-badge mb-6">
-        <span class="inline-flex items-center gap-2 font-mono text-2xs uppercase tracking-widest text-ivory/85 border border-crimson-vivid/35 bg-ink/20 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-[0_0_0_1px_rgba(154,71,71,0.2)]">
-          <span class="w-1.5 h-1.5 rounded-full bg-crimson-vivid inline-block shadow-[0_0_12px_rgba(154,71,71,0.55)]" />
+        <span class="inline-flex items-center gap-2 font-mono text-2xs uppercase tracking-widest text-ivory/85 border border-crimson-vivid/35 bg-ink/20 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-[0_0_0_1px_rgba(196,30,58,0.22)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-crimson-vivid inline-block shadow-[0_0_12px_rgba(196,30,58,0.5)]" />
           Est. 2017 · Brown University
         </span>
       </div>
@@ -83,7 +83,7 @@ onMounted(() => {
       <h2 class="font-cormorant font-semibold text-ivory leading-none mb-8 hero-line-b">
         <span class="block text-[clamp(3rem,7.5vw,8rem)] tracking-tighter leading-[0.9] drop-shadow-[0_4px_32px_rgba(0,0,0,0.35)]">
           Brown Southeast<br>
-          <em class="text-crimson-vivid not-italic [text-shadow:0_0_40px_rgba(154,71,71,0.35)]">Asian Studies</em><br>
+          <em class="text-crimson-vivid not-italic [text-shadow:0_0_40px_rgba(196,30,58,0.4)]">Asian Studies</em><br>
           Initiative.
         </span>
       </h2>

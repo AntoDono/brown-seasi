@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 
+const props = withDefaults(
+  defineProps<{
+    /** Skip entrance animation (e.g. Open Graph screenshot page). */
+    staticLayout?: boolean
+  }>(),
+  { staticLayout: false },
+)
+
 const root = ref<HTMLElement | null>(null)
 
 const features = [
@@ -28,7 +36,7 @@ const features = [
 
 onMounted(() => {
   const section = root.value
-  if (!section) return
+  if (!section || props.staticLayout) return
 
   const ctx = gsap.context(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })

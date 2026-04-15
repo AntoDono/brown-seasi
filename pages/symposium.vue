@@ -3,7 +3,7 @@ const title = 'Symposium 2026 — Brown SEASI'
 const description =
   "SEASI's 6th Annual Symposium on Southeast Asian Studies, April 4, 2026 at the Watson Institute, Brown University."
 
-const ogImage = useSiteAssetUrl('/images/conference.png')
+const ogImage = useSiteAssetUrl('/images/website-preview.png')
 
 useSeoMeta({
   title,
@@ -11,7 +11,7 @@ useSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogImage,
-  ogImageAlt: 'SEASI symposium at Brown University',
+  ogImageAlt: 'Brown Southeast Asian Studies Initiative — Brown University',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   twitterTitle: title,

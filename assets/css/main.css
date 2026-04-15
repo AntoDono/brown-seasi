@@ -24,7 +24,7 @@ body {
 
 /* ─── Selection ───────────────────────────────────────────────────────────── */
 ::selection {
-  background-color: #9A4747;
+  background-color: #C41E3A;
   color: #F9F6F0;
 }
 
@@ -36,11 +36,11 @@ body {
   background: #EDE8DF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #9A4747;
+  background: #C41E3A;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7D3838;
+  background: #9E1628;
 }
 
 /* ─── Typography helpers ──────────────────────────────────────────────────── */

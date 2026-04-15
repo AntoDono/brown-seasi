@@ -3,7 +3,7 @@ const title = 'Brown SEASI — Southeast Asian Studies Initiative'
 const description =
   'The Southeast Asian Studies Initiative (SEASI) at Brown University advocates for the development of Southeast Asian Studies through faculty support, courses, and programming.'
 
-const ogImage = useSiteAssetUrl('/images/landing-background.png')
+const ogImage = useSiteAssetUrl('/images/website-preview.png')
 
 useSeoMeta({
   title,
@@ -11,7 +11,7 @@ useSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogImage,
-  ogImageAlt: 'Southeast Asian landscape — Brown SEASI',
+  ogImageAlt: 'Brown Southeast Asian Studies Initiative — Brown University',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   twitterTitle: title,

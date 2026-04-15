@@ -8,7 +8,7 @@ useScrollReveal(root)
 <template>
   <section id="annual-report" ref="root" class="relative bg-ivory-dark py-24 md:py-36 overflow-hidden">
     <!-- Background wash -->
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(154,71,71,0.12),transparent_55%)]" />
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(196,30,58,0.14),transparent_55%)]" />
     <div class="pointer-events-none absolute inset-0 bg-grain opacity-[0.35]" />
 
     <div class="max-w-8xl mx-auto px-6 md:px-10 relative z-10">
@@ -88,11 +88,11 @@ useScrollReveal(root)
                     aria-hidden="true"
                   >
                   <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-crimson-deep/50" />
-                  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(179,90,90,0.28),transparent_55%)]" />
+                  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(239,68,68,0.28),transparent_55%)]" />
                 </div>
 
                 <!-- Spine accent -->
-                <div class="absolute left-0 top-0 bottom-0 z-[2] w-2 bg-gradient-to-b from-crimson via-crimson-vivid to-crimson-deep shadow-[4px_0_24px_rgba(154,71,71,0.35)]" />
+                <div class="absolute left-0 top-0 bottom-0 z-[2] w-2 bg-gradient-to-b from-crimson via-crimson-vivid to-crimson-deep shadow-[4px_0_24px_rgba(196,30,58,0.38)]" />
 
                 <!-- Cover typography -->
                 <div class="absolute inset-0 z-10 flex flex-col justify-between p-8 sm:p-10 text-ivory">
@@ -119,7 +119,7 @@ useScrollReveal(root)
                       :key="item"
                       class="flex items-center gap-3 font-sans text-xs text-ivory/55"
                     >
-                      <span class="h-1 w-1 rounded-full bg-crimson-vivid shadow-[0_0_8px_rgba(179,90,90,0.5)]" />
+                      <span class="h-1 w-1 rounded-full bg-crimson-vivid shadow-[0_0_8px_rgba(239,68,68,0.45)]" />
                       {{ item }}
                     </li>
                   </ul>
