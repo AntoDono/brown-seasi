@@ -1,6 +1,6 @@
 /**
  * Absolute URL for a path under `public/` (e.g. `/images/hero.png`).
- * Set `NUXT_PUBLIC_SITE_URL` in production so Open Graph images resolve for crawlers.
+ * Base comes from `runtimeConfig.public.siteUrl` (see `nuxt.config.ts`: `NUXT_PUBLIC_SITE_URL` or Netlify `URL`).
  */
 export function useSiteAssetUrl(path: string) {
   const config = useRuntimeConfig()

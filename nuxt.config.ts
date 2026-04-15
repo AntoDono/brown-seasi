@@ -1,4 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+/** Canonical origin for OG URLs (no trailing slash). Inlined at build time. */
+function publicSiteUrl() {
+  const raw =
+    process.env.NUXT_PUBLIC_SITE_URL ||
+    // Netlify sets https://yoursite.netlify.app during build — use if you didn’t set NUXT_PUBLIC_*
+    process.env.URL ||
+    process.env.DEPLOY_PRIME_URL ||
+    ''
+  return raw.replace(/\/$/, '')
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -8,8 +20,11 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      /** Production site origin, no trailing slash (e.g. https://seasi.brown.edu). Required for correct Open Graph image URLs. */
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
+      /**
+       * Used for absolute `og:image` URLs. Prefer `NUXT_PUBLIC_SITE_URL` for a custom domain.
+       * If unset, Netlify’s `URL` is used automatically during the build.
+       */
+      siteUrl: publicSiteUrl(),
     },
   },
 
