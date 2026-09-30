@@ -26,6 +26,19 @@ const events = [
     featured: true,
     past: false,
   },
+  ...speakerTalks.map((talk, i) => ({
+    id: 100 + i,
+    date: formatTalkDate(talk.date, 'short'),
+    time: talk.time ?? 'Time TBA',
+    title: talk.title ? `${talk.speaker}: ${talk.title}` : talk.speaker,
+    description: `Lecture Series · ${talk.affiliation}`,
+    location: talk.location ?? 'Brown University, Providence RI',
+    tag: 'Lecture',
+    tagColor: 'bg-sepia/10 text-sepia ring-1 ring-sepia/20',
+    href: `/speaker-series#${talk.slug}`,
+    featured: false,
+    past: isTalkPast(talk.date),
+  })),
 ]
 </script>
 

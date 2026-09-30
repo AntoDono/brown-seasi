@@ -100,8 +100,14 @@ onMounted(() => {
             Learn More
           </NuxtLink>
           <NuxtLink
-            to="/symposium"
+            to="/speaker-series"
             class="font-sans text-sm font-medium px-6 py-3 rounded-full bg-white text-[#1C1917] border border-stone-400/90 shadow-md transition-colors duration-200 hover:bg-stone-100"
+          >
+            Speaker Series
+          </NuxtLink>
+          <NuxtLink
+            to="/symposium"
+            class="font-sans text-sm font-medium px-6 py-3 rounded-full border border-ivory/40 text-ivory hover:bg-ivory/10 transition-colors duration-200"
           >
             Symposium 2026
           </NuxtLink>

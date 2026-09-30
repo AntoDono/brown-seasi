@@ -16,6 +16,7 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/#about' },
   { label: 'Events', href: '/#events' },
+  { label: 'Speaker Series', href: '/speaker-series' },
   { label: 'Symposium 2026', href: '/symposium' },
 ]
 </script>
