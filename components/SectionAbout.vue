@@ -166,12 +166,12 @@ onMounted(() => {
 
           <div data-reveal>
             <a
-              href="https://drive.google.com/file/d/1IvbaHN4bnrnH0o2v3s-_nY3TGx5YyhqW/view"
+              href="/SEASI%20Annual%20Report%202025-26.pdf"
               target="_blank"
               rel="noopener"
               class="inline-flex items-center gap-2 font-sans text-sm font-medium text-crimson hover:text-crimson-dark border-b-2 border-crimson/30 hover:border-crimson pb-0.5 transition-colors duration-200"
             >
-              Read our Annual Report 2024–2025
+              Read our Annual Report 2025–2026
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-3.5 h-3.5">
                 <path d="M7 17L17 7M17 7H7M17 7v10"/>
               </svg>

@@ -22,7 +22,7 @@ const navLinks = [
   { label: 'About',          href: '/#about' },
   { label: 'Events',         href: '/#events' },
   { label: 'Symposium 2026', href: '/symposium' },
-  { label: 'Annual Report',  href: 'https://drive.google.com/file/d/1IvbaHN4bnrnH0o2v3s-_nY3TGx5YyhqW/view' },
+  { label: 'Annual Report',  href: '/SEASI%20Annual%20Report%202025-26.pdf' },
 ]
 </script>
 

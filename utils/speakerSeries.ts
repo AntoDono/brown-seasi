@@ -52,6 +52,8 @@ export const speakerTalks: SpeakerTalk[] = [
     date: '2026-10-21',
     speaker: 'Yu-Mei Balasingamchow',
     affiliation: 'Author of Names Have Been Changed',
+    location: 'Pembroke Hall',
+    time: '5:30 – 7:00 PM',
     portrait: '/images/speaker-series/yu-mei-balasingamchow.png',
   },
   {
@@ -59,6 +61,9 @@ export const speakerTalks: SpeakerTalk[] = [
     date: '2026-11-10',
     speaker: 'Nurfadzilah Yahaya',
     affiliation: 'Yale University',
+    title: 'Who Owns the Shore? Making Land in Colonial Singapore',
+    location: 'Pavilion Room, Peter Green House',
+    time: '5:30 – 6:30 PM',
     portrait: '/images/speaker-series/nurfadzilah-yahaya.jpg',
   },
 ]

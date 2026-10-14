@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const REPORT_URL = 'https://drive.google.com/file/d/1IvbaHN4bnrnH0o2v3s-_nY3TGx5YyhqW/view'
+const REPORT_URL = '/SEASI%20Annual%20Report%202025-26.pdf'
 
 const root = ref<HTMLElement | null>(null)
 useScrollReveal(root)
@@ -24,7 +24,7 @@ useScrollReveal(root)
           <div data-reveal>
             <h2 class="font-cormorant font-semibold leading-[0.95] text-ink">
               <span class="block text-[clamp(2.5rem,5.5vw,4.5rem)] tracking-tight">Annual Report</span>
-              <span class="block text-[clamp(2.5rem,5.5vw,4.5rem)] tracking-tight text-crimson mt-1">2024–2025</span>
+              <span class="block text-[clamp(2.5rem,5.5vw,4.5rem)] tracking-tight text-crimson mt-1">2025–2026</span>
             </h2>
             <div class="mt-6 h-1 w-24 bg-gradient-to-r from-crimson to-crimson-vivid rounded-full" />
           </div>
@@ -109,7 +109,7 @@ useScrollReveal(root)
                       Annual<br>Report
                     </h3>
                     <p class="mt-4 font-cormorant italic text-2xl text-crimson-vivid">
-                      2024–2025
+                      2025–2026
                     </p>
                   </div>
 
@@ -125,13 +125,13 @@ useScrollReveal(root)
                   </ul>
                 </div>
 
-                <!-- Hover: solid panel + Google Drive copy (CSS only) -->
+                <!-- Hover: solid panel + PDF copy (CSS only) -->
                 <div
                   class="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center gap-4 bg-ink/90 px-8 text-center opacity-0 backdrop-blur-[1px] transition-opacity duration-300 ease-out group-hover:opacity-100"
                 >
                   <span class="font-mono text-2xs uppercase tracking-[0.35em] text-crimson-vivid">Preview</span>
                   <p class="font-cormorant text-2xl sm:text-3xl text-ivory leading-snug max-w-sm">
-                    Open the full PDF on Google Drive
+                    Open the full PDF
                   </p>
                   <span class="inline-flex items-center gap-2 rounded-full bg-crimson px-5 py-2 font-sans text-sm font-medium text-ivory ring-1 ring-crimson-vivid/40 shadow-lg shadow-crimson/30">
                     View document
@@ -144,7 +144,7 @@ useScrollReveal(root)
 
               <!-- Bottom strip -->
               <div class="flex items-center justify-between gap-3 border-t border-ivory/10 bg-ink/95 px-5 py-3 backdrop-blur-sm">
-                <span class="font-mono text-2xs uppercase tracking-widest text-ivory/40">PDF · hosted on Drive</span>
+                <span class="font-mono text-2xs uppercase tracking-widest text-ivory/40">PDF · 2025–26</span>
                 <span class="font-mono text-2xs text-crimson-vivid">↗</span>
               </div>
             </a>
